@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* OnboardChain — dark canvas, Arc-gradient accent */
+    --background: 240 18% 4%;
+    --foreground: 240 20% 97%;
+
+    --card: 240 14% 7%;
+    --card-foreground: 240 20% 97%;
+
+    --popover: 240 14% 7%;
+    --popover-foreground: 240 20% 97%;
+
+    --primary: 249 100% 71%;
+    --primary-foreground: 240 20% 98%;
+
+    --secondary: 240 12% 12%;
+    --secondary-foreground: 240 20% 97%;
+
+    --muted: 240 12% 12%;
+    --muted-foreground: 240 8% 62%;
+
+    --accent: 240 12% 12%;
+    --accent-foreground: 240 20% 97%;
+
+    --destructive: 4 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 12% 16%;
+    --input: 240 12% 16%;
+    --ring: 249 100% 71%;
+
+    --radius: 0.75rem;
+
+    /* Signature Arc gradient */
+    --arc-from: 249 100% 71%;
+    --arc-via: 219 100% 62%;
+    --arc-to: 189 100% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(60rem 30rem at 15% -10%, hsl(249 90% 20% / 0.35), transparent 60%),
+      radial-gradient(50rem 26rem at 100% 0%, hsl(200 90% 20% / 0.25), transparent 55%);
+    background-repeat: no-repeat;
+  }
+}
+
+@layer utilities {
+  .text-gradient-arc {
+    background-image: linear-gradient(
+      95deg,
+      hsl(var(--arc-from)),
+      hsl(var(--arc-via)) 55%,
+      hsl(var(--arc-to))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .glow-card {
+    box-shadow: 0 0 0 1px hsl(var(--border)), 0 20px 60px -20px hsl(249 90% 40% / 0.25);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
