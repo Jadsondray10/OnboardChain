@@ -25,7 +25,9 @@ export default function SignupPage() {
           <Label htmlFor="password">Password</Label>
           <Input id="password" type="password" placeholder="••••••••" />
         </div>
-        <Button className="w-full">Create account</Button>
+        <Button className="w-full" asChild>
+          <Link href={ROUTES.onboarding}>Create account</Link>
+        </Button>
       </CardContent>
       <CardFooter className="justify-center text-sm text-muted-foreground">
         Already have an account?{" "}

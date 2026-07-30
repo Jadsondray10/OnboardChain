@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -11,8 +12,22 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useProfilePhoto } from "@/features/profile/use-profile-photo";
+import { useOnboardingStore } from "@/features/onboarding/use-onboarding-store";
+import { ROUTES } from "@/lib/constants";
 
 export function DashboardHeader() {
+  const { photoUrl } = useProfilePhoto();
+  const { answers } = useOnboardingStore();
+  const initials =
+    answers.name
+      .trim()
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0]?.toUpperCase())
+      .join("") || "OC";
+
   return (
     <header className="flex h-16 items-center justify-between border-b bg-background px-6">
       <div />
@@ -24,18 +39,24 @@ export function DashboardHeader() {
           <DropdownMenuTrigger asChild>
             <button className="rounded-full">
               <Avatar>
-                <AvatarImage src="" alt="User avatar" />
-                <AvatarFallback>OC</AvatarFallback>
+                {photoUrl && <AvatarImage src={photoUrl} alt="Profile photo" />}
+                <AvatarFallback>{initials}</AvatarFallback>
               </Avatar>
             </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href={ROUTES.profile}>Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href={ROUTES.settings}>Settings</Link>
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Log out</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href={ROUTES.home}>Log out</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
