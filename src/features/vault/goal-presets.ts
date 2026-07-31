@@ -20,6 +20,11 @@ export const vaultGoalPresets: VaultGoalPreset[] = [
   { type: "custom", label: "Custom Goal", icon: Sparkles, suggestedTarget: 1000 },
 ];
 
+// `vaultGoalPresets` is a non-empty literal array defined above, so this
+// index is always in range — the assertion is safe and avoids repeating
+// an unchecked-index fallback inside every getGoalPreset() call.
+const DEFAULT_GOAL_PRESET = vaultGoalPresets[vaultGoalPresets.length - 1]!;
+
 export function getGoalPreset(type: VaultGoalType): VaultGoalPreset {
-  return vaultGoalPresets.find((g) => g.type === type) ?? vaultGoalPresets[vaultGoalPresets.length - 1];
+  return vaultGoalPresets.find((g) => g.type === type) ?? DEFAULT_GOAL_PRESET;
 }
