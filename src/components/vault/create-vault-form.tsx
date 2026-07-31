@@ -56,7 +56,7 @@ export function CreateVaultForm() {
       targetAmount: target,
       monthlySavings: monthly,
       lockDurationMonths,
-      savingsPercentage: savingsPercentage[0],
+      savingsPercentage: savingsPercentage[0] ?? 10,
     });
 
     setOpen(false);
@@ -148,7 +148,7 @@ export function CreateVaultForm() {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label htmlFor="percentage">Savings percentage</Label>
-              <span className="font-mono text-xs text-muted-foreground">{savingsPercentage[0]}%</span>
+              <span className="font-mono text-xs text-muted-foreground">{savingsPercentage[0] ?? 10}%</span>
             </div>
             <Slider
               id="percentage"
