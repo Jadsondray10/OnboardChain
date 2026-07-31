@@ -1,3 +1,4 @@
+"use client";
 import { AcademyStats } from "@/components/academy/academy-stats";
 import { LessonCard } from "@/components/academy/lesson-card";
 import { Reveal } from "@/components/marketing/reveal";
