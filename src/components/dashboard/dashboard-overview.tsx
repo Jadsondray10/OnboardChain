@@ -35,7 +35,7 @@ export function DashboardOverview() {
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <Reveal className="sm:col-span-2 lg:col-span-3">
         <p className="text-sm text-muted-foreground">
-          Welcome back, <span className="text-foreground">{firstName}</span> — here's where things stand.
+          Welcome back, <span className="text-foreground">{firstName}</span> — here&apos;s where things stand.
         </p>
       </Reveal>
 

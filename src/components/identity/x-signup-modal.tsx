@@ -40,7 +40,7 @@ export function XSignupModal({ open, onOpenChange, onConnect, isConnecting }: XS
         {step === "ask" ? (
           <>
             <DialogHeader>
-              <DialogTitle>Don't have an X account?</DialogTitle>
+              <DialogTitle>Don&apos;t have an X account?</DialogTitle>
               <DialogDescription>
                 Most Web3 communities, founders and projects communicate on X. Creating an
                 account will help you discover opportunities, grow your reputation and connect
@@ -49,7 +49,7 @@ export function XSignupModal({ open, onOpenChange, onConnect, isConnecting }: XS
             </DialogHeader>
             <DialogFooter className="gap-2 sm:gap-2">
               <Button variant="ghost" onClick={() => onOpenChange(false)}>
-                I'll Do This Later
+                I&apos;ll Do This Later
               </Button>
               <Button variant="gradient" onClick={handleCreateAccount}>
                 Create an X Account <ExternalLink className="h-4 w-4" />
@@ -66,7 +66,7 @@ export function XSignupModal({ open, onOpenChange, onConnect, isConnecting }: XS
             </DialogHeader>
             <DialogFooter className="gap-2 sm:gap-2">
               <Button variant="ghost" onClick={() => onOpenChange(false)}>
-                I'll Do This Later
+                I&apos;ll Do This Later
               </Button>
               <Button
                 variant="gradient"

@@ -30,7 +30,7 @@ export function IdentityView() {
           Complete Your Web3 Identity
         </h1>
         <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
-          Your profile is ready. Let's connect you to the Web3 ecosystem before you begin.
+          Your profile is ready. Let&apos;s connect you to the Web3 ecosystem before you begin.
         </p>
       </Reveal>
 
@@ -50,7 +50,7 @@ export function IdentityView() {
                     onClick={() => setXModalOpen(true)}
                     className="w-full text-center text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
                   >
-                    Don't have an X account?
+                    Don&apos;t have an X account?
                   </button>
                 ) : undefined
               }
