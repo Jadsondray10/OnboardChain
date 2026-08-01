@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useProfilePhoto } from "@/features/profile/use-profile-photo";
 import { useOnboardingStore } from "@/features/onboarding/use-onboarding-store";
+import { signOut } from "@/features/auth/actions";
 import { ROUTES } from "@/lib/constants";
 
 export function DashboardHeader() {
@@ -55,7 +56,9 @@ export function DashboardHeader() {
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
-              <Link href={ROUTES.home}>Log out</Link>
+              <button type="button" onClick={() => signOut()} className="w-full text-left">
+                Log out
+              </button>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

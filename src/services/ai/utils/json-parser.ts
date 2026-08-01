@@ -18,6 +18,6 @@ export function parseJsonResponse<T>(raw: string): T {
 }
 
 function stripCodeFence(text: string): string {
-  const fenceMatch = text.match(/`(?:json)?\s*([\s\S]*?)```/i);
-return fenceMatch?.[1] ?? text;
+  const fenceMatch = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  return fenceMatch?.[1] ?? text;
 }

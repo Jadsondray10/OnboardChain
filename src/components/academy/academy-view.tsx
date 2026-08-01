@@ -1,8 +1,13 @@
 "use client";
+
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { AcademyStats } from "@/components/academy/academy-stats";
 import { LessonCard } from "@/components/academy/lesson-card";
 import { Reveal } from "@/components/marketing/reveal";
 import { lessons } from "@/features/academy/courses";
+import { ROUTES } from "@/lib/constants";
 
 export function AcademyView() {
   return (
@@ -27,6 +32,14 @@ export function AcademyView() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal delay={0.1} className="flex justify-center pt-4">
+        <Button size="lg" variant="gradient" asChild>
+          <Link href={ROUTES.dashboard}>
+            Go to Dashboard <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
+      </Reveal>
     </div>
   );
 }

@@ -35,6 +35,8 @@
     "@radix-ui/react-slider": "^1.2.0",
     "@circle-fin/app-kit": "latest",
     "@circle-fin/adapter-viem-v2": "latest",
+    "@supabase/supabase-js": "^2.45.0",
+    "@supabase/ssr": "^0.5.0",
     "viem": "^2.21.0",
     "recharts": "^2.12.0"
   },
